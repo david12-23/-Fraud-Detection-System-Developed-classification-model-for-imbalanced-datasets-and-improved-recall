@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fraud Detection System</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Fraud Detection System</h1>
+
+        <form action="/predict" method="post">
+
+            <input type="text" name="amount"
+            placeholder="Transaction Amount" required>
+
+            <input type="text" name="oldbalanceOrg"
+            placeholder="Old Balance Origin" required>
+
+            <input type="text" name="newbalanceOrig"
+            placeholder="New Balance Origin" required>
+
+            <input type="text" name="oldbalanceDest"
+            placeholder="Old Balance Destination" required>
+
+            <input type="text" name="newbalanceDest"
+            placeholder="New Balance Destination" required>
+
+            <button type="submit">Predict</button>
+
+        </form>
+
+        <h2>{{ prediction_text }}</h2>
+
+    </div>
+
+</body>
+</html>
